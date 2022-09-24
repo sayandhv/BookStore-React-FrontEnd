@@ -1,0 +1,66 @@
+
+    .Container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    }
+    .Box{
+         width: 53vw; 
+        height: 68vh;
+        display: flex; 
+         flex-direction: row;
+        align-items: center; 
+        justify-content: center;
+    }
+    .leftBox{
+        width: 85%;
+        height: 85%;
+        border-radius: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #F5F5F5 ;
+
+    }
+
+    .trollyImage{
+        width: 70%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        border-radius:70% ;
+        margin-top:50px ;
+        
+    }
+    
+    .image{
+        width: 100%;
+        height: 110%;
+        border-radius:50%;        
+    }
+    .textUnderImage{
+        margin-top: 10px;
+        
+    }
+    .RightBox{
+    width: 90%;
+        height: 110%;
+        justify-content: center;
+        align-items: center;
+        margin-left:-20px ;
+        background-color: white;
+        border-radius: 2%;
+
+    }
+    .buttons{
+          margin-top: 10px; 
+        display: flex;
+        flex-direction: row;
+         gap: 70px;  
+         justify-content: center;        
+    }
+    

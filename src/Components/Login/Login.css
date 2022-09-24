@@ -1,0 +1,36 @@
+.loginContainer{
+    margin-left: -150px;
+    margin-top: 60px;
+    justify-content: center;
+}
+.emailPassword {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 223px;
+    margin-left: 42.7%;
+}
+.login_Btn {
+    background-color:#a03037;
+    width:223px ;
+    margin-left: 42.7%;
+    margin-top: 25px;
+}
+.loginBtn{
+    width: 223px;
+}
+
+.loginText{
+    color: white;
+}
+.or{
+    margin-top: 20px;
+    margin-left: 160px; ;
+}
+.otherBtn {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 42.7%;
+}

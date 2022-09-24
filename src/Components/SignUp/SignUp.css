@@ -1,0 +1,21 @@
+.mainContainer{
+    margin-left: 0px;
+    margin-top: 5px;
+    
+}
+
+.fields{
+    display: flex;
+    flex-direction: column;
+}
+
+.signUpBtn{
+    margin-top:  10px;
+    width:298px ;
+    margin-left: 66px; ;
+    background-color: #a03037;
+
+}
+ .signup_btn{
+    width: 298px ;
+} 
