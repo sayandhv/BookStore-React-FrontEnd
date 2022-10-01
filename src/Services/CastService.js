@@ -31,14 +31,24 @@ class CartService {
         return response;
     }
 
-
-
-
     getAllBooksFromCart() {
         // const headers = header();
         return axiosService.get(`${baseURL}/getAllBooksInCart`, header)
     }
 
+    addBookToWishlist(data) {
+        return axiosService.post(`${baseURL}/addBookToWishlistByBookId`, data, header)
+    }
+
+    deleteBookFromWishlist=(data)=>{
+        let response = axiosService.put(`${baseURL}/deleteBookByWishlistId`, data, header)
+        return response;
+    }
+
+    getAllBooksFromWishlist() {
+       
+        return axiosService.get(`${baseURL}/getAllBooksInWishlist`, header)
+    }
 
 }
 export default CartService;

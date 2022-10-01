@@ -16,6 +16,8 @@ import CustomerDetails from './Components/CustomerDetails/CustomerDetails';
 import OrderSuccess from './Pages/OrderSuccess/OrderSuccess';
 import CartPage from './Pages/CartPage/CartPage';
 import OrderSummery from './Components/OrderSummery/OrderSummery';
+import Wishlists from './Pages/WishList/WishListPage';
+
 
 function App() {
   return (
@@ -33,13 +35,13 @@ function App() {
           <Route path='/' element = {<HomePage />}></Route>
           <Route path='/dashboard' element = {<Dashboard />}></Route>
           <Route path='/forgotpassword' element={<ForgetPassword/>} />
-          <Route path='/getBookByid' element={<GetBookByid/>} />
+          {/* <Route path='/getBookByid' element={<GetBookByid/>} /> */}
           {/* <Route path = '/mycart' element = {<Cart/> } /> */}
           <Route path = '/customerDetails' element = {<CustomerDetails/> } />
           <Route path = '/success' element = {<OrderSuccess/> } />
           <Route path='/mycart' element = {<CartPage />}></Route>
           {/* <Route path = '/ordersummery' element = {<OrderSummery/> } /> */}
-
+          <Route path='/wishlist' element = {<Wishlists />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

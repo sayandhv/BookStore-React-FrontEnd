@@ -9,13 +9,13 @@ import CartService from '../../Services/CastService';
 const cartService = new CartService();
 function GetBookByid(props) {
 
-  const [bookId, setBookId] = useState(props.bookdata.id)
+  // const [bookId, setBookId] = useState(props.selectedBook.id);  
 
   const addToCart = (props) => {
     console.log(props)
     let data = {
 
-        'book_id': props.bookdata.id
+        'book_id': props.selectedBook.id
     }
     console.log('Add to cart calling', data)
     cartService.addBookToCart(data)
@@ -25,6 +25,23 @@ function GetBookByid(props) {
         }).catch((err) => {
             console.log(err);
         })
+}
+
+const addToWishlist = (props) => {
+  console.log(props)
+
+  let data = {
+
+      'book_id': props.selectedBook.id
+  }
+  console.log("Wish list is calling", data)
+  cartService.addBookToWishlist(data)
+      .then((res) => {
+          console.log(res);
+
+      }).catch((err) => {
+          console.log(err);
+      })
 }
 
     return (
@@ -40,14 +57,14 @@ function GetBookByid(props) {
             </div>
             <div className="BookBottom_part">
               <input onClick={() => addToCart(props)} type="button" value="ADD TO BAG" className="Add_bag" />
-              <input type="button" value="WISHLIST" className="wishlist_part" />
+              <input onClick={() => addToWishlist(props)} type="button" value="WISHLIST" className="wishlist_part" />
             </div>
           </div>
 
           <div className="BookDetail_right">
             <div className="BookDetail-2">
-              <div className="name_part"> {props.bookdata?props.bookdata.name:''} </div>
-              <div className="autor_part">{props.bookdata?props.bookdata.author:''}</div>
+              <div className="name_part"> {props.selectedBook.name} </div>
+              <div className="autor_part">{props.selectedBook.author}</div>
 
               <div className="rating">
                 <div>4.5 </div>

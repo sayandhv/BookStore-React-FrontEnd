@@ -9,39 +9,42 @@ const bookService = new BookService();
 
 function DisplayBooks(props) {
 
-  const [bookdata,setBookdata] = useState([]);
-
   const navigate = useNavigate();
 
-  const [view, SetView] = useState(false);
+
   
-  const getBookById = (props) => {
-    console.log("props")
-    let data = {
-      "id":props.arrayBook.id
-    }
-    console.log("GetBookById is calling");
-    console.log(data);
-    bookService.getBookById(data).then((response) => {
+  // const getBookById = (data) => {
+  //   console.log("props")
+  //   let data = {
+  //     "id":props.arrayBook.id
+  //   }
+  //   console.log("GetBookById is calling");
+  //   console.log(data);
+  //   bookService.getBookById(data).then((response) => {
                     
-      console.log(response);
+  //     console.log(response);
       
-      setBookdata(response.data.book);
-      SetView(true);
-      // navigate('/getBookByid')
-        }).catch((error) =>{
-          console.log(error);
-        })
-  }
- 
+  //     setBookdata(response.data.book); 
+  //     SetView(true);
+  //     // navigate('/getBookByid')
+  //       }).catch((error) =>{
+  //         console.log(error);
+  //       })
+  //   props.listenToEachBook(data);
+     
+  // }
+
+ const bookDetail = (data) => {
+    // props.listenToBooks(true);
+    props.listenToEachBook(data);
+}
 
   return (
 
     <>
-    {view == false ?
     <div className="align_books">
       <div className="outsideBookbox " >
-    <div className="book_box" onClick = {()=> getBookById(props)}>
+    <div className="book_box" onClick={() => bookDetail(props.arrayBook)}>
       <div>
         <div className="book_part">
           <div className="booksImage">
@@ -59,7 +62,7 @@ function DisplayBooks(props) {
               
             </span>
             <div className="booksPrice">Rs.{props.arrayBook.price}</div>
-            <span className='quantity'>({props.arrayBook.quantity})</span>
+            {/* <span className='quantity'>({props.arrayBook.quantity})</span> */}
             </div>
           </div>
         </div>
@@ -68,7 +71,6 @@ function DisplayBooks(props) {
     </div>
     </div>
        
-     : <GetBookByid bookdata={bookdata}/>}
   
   </>
 );
